@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Page</title>
+</head>
+<body>
+    <h1>Welcome to the Secure Page</h1>
+    <p>This is a secure page accessible only to logged-in users.</p>
+    <h1>{{ user }}</h1>
+    <a href="{% url 'account_logout' %}">Logout</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'variant1/baseFiles.html' %}
+
+{% block content %}
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Author</th>
+        <th>Name</th>
+        <th>Date upload</th>
+        <th>File size</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for file in files %}
+        <tr>
+          <td>{{ file.author_file }}</td>
+          <td>{{ file.file_name }}</td>
+          <td>{{ file.file_upload }}</td>
+          <td>{{ file.file_size }}</td>
+        </tr>
+      {% empty %}
+        <tr class="table-active">
+          <td colspan="3">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

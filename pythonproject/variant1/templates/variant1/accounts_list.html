@@ -1,0 +1,29 @@
+{% extends 'variant1/base.html' %}
+
+{% block content %}
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Date registration</th>
+        <th>Count file uploads</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for account in accounts %}
+        <tr>
+          <td>{{ account.user_name }}</td>
+          <td>{{ account.user_email }}</td>
+          <td>{{ account.user_date_registration }}</td>
+          <td>{{ account.user_count_uploads }}</td>
+        </tr>
+      {% empty %}
+        <tr class="table-active">
+          <td colspan="3">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

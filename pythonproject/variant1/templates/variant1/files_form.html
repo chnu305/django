@@ -1,0 +1,22 @@
+{% extends 'variant1/baseFiles.html' %}
+
+{% load crispy_forms_tags %}
+
+**main/files_form.html**
+
+{% block content %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        {{ form.author_file|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.file_name|as_crispy_field }}
+      </div>
+    </div>
+    {{ form.file_upload|as_crispy_field }}
+    {{ form.file_size|as_crispy_field }}
+    <button type="submit" class="btn btn-success">Save file</button>
+  </form>
+{% endblock %}

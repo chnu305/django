@@ -1,0 +1,29 @@
+{% extends 'variant1/baseId.html' %}
+{% block title3 %}
+  <h1>Files of {{ files.0.author_file.user_name }}</h1>
+    {% endblock %}
+{% block content %}
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date upload</th>
+        <th>File size</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for file in files %}
+        <tr>
+          <td>{{ file.file_name }}</td>
+          <td>{{ file.file_upload }}</td>
+          <td>{{ file.file_size }}</td>
+        </tr>
+      {% empty %}
+        <tr class="table-active">
+          <td colspan="3">No files available</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
